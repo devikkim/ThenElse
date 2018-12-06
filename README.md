@@ -5,11 +5,42 @@
 [![License](https://img.shields.io/cocoapods/l/ThenElse.svg?style=flat)](https://cocoapods.org/pods/ThenElse)
 [![Platform](https://img.shields.io/cocoapods/p/ThenElse.svg?style=flat)](https://cocoapods.org/pods/ThenElse)
 
+Simplest extension of Bool.
+
 ## Example
 
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
+```swift
+  var odd: Set = [1,3,5,7,9]
+  var even: Set = [2,4,6,8,0]
 
-## Requirements
+  odd.insert(1).inserted.then {
+      print("inserted")
+    }.else {
+      print("do not inserted")
+    }
+  // print : "do not inserted"
+
+  let insertResult = even.insert(1).inserted.then{
+      return "inserted"
+    }.else{
+      return "do not inserted"
+    }
+    
+  print("\(insertResult)") // print: "inserted"
+    
+  let value = 11
+    
+  let filterArray = (value % 2 == 1)
+    .then{ () -> [Int] in
+      let arr = [Int](0...value).filter{ $0 % 2 == 1 }
+      return arr
+    }.else { () -> [Int] in
+      let arr = [Int](0...value).filter{ $0 % 2 == 0 }
+      return arr
+    }
+    
+  print(filterArray) // print: [1, 3, 5, 7, 9, 11]
+```
 
 ## Installation
 
