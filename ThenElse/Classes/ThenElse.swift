@@ -20,20 +20,27 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
+
 extension Bool {
-  @discardableResult
-  public func then (_ t: () -> Void) -> Bool {
-    if self {
-      t()
-    }
-    return self
-  }
   
   @discardableResult
-  public func `else` (_ f: () -> Void) -> Bool {
-    if !self {
-      f()
+  public func then<T> (_ t: () -> T) -> T? {
+    if self {
+     return t()
     }
-    return self
+    return nil
+  }
+}
+
+extension Optional {
+  
+  @discardableResult
+  public func `else`(_ f: () -> Wrapped) -> Wrapped {
+    switch self {
+    case .none:
+      return f()
+    case .some(let value):
+      return value
+    }
   }
 }
