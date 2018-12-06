@@ -13,16 +13,34 @@ class Tests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
+    func testThenElseExample() {
         // This is an example of a functional test case.
-        XCTAssert(true, "Pass")
-    }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure() {
-            // Put the code you want to measure the time of here.
+      
+      var odd: Set = [1,3,5,7,9]
+      var even: Set = [2,4,6,8,0]
+
+      odd.insert(1).inserted.then {
+          print("added")
+        }.else {
+          print("existed")
         }
+      
+      if even.insert(1).inserted {
+        print("added")
+      } else {
+        print("existed")
+      }
+      
+      let a = 10
+      let b = 100
+      
+      (a > b)
+        .then {
+          print("a is bigger then b")
+        }.else {
+          print("b is bigger then a")
+        }
+
     }
-    
+  
 }

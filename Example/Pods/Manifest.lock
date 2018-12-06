@@ -1,0 +1,16 @@
+PODS:
+  - ThenElse (0.1.0)
+
+DEPENDENCIES:
+  - ThenElse (from `../`)
+
+EXTERNAL SOURCES:
+  ThenElse:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  ThenElse: 8d40d02bb6593a79714d705b29fd9f0ef4bfa10b
+
+PODFILE CHECKSUM: 9b1bb9c291eb14aa037393f83e2a249f763785c8
+
+COCOAPODS: 1.5.3
