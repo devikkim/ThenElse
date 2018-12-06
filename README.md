@@ -1,6 +1,5 @@
 # ThenElse
 
-[![CI Status](https://img.shields.io/travis/leibniz55/ThenElse.svg?style=flat)](https://travis-ci.org/leibniz55/ThenElse)
 [![Version](https://img.shields.io/cocoapods/v/ThenElse.svg?style=flat)](https://cocoapods.org/pods/ThenElse)
 [![License](https://img.shields.io/cocoapods/l/ThenElse.svg?style=flat)](https://cocoapods.org/pods/ThenElse)
 [![Platform](https://img.shields.io/cocoapods/p/ThenElse.svg?style=flat)](https://cocoapods.org/pods/ThenElse)
